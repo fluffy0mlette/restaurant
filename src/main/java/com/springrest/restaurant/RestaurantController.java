@@ -92,7 +92,7 @@ public class RestaurantController {
 	}
 	
 	@PostMapping("/reInitialize")
-	public HttpStatus reInitialize() {
+	public ResponseEntity<String> reInitialize() {
 		File myObj = new File("/Users/fluffy/Downloads/delivery/initialData.txt");
 		Scanner myReader = null;
 		try {
@@ -121,7 +121,7 @@ public class RestaurantController {
 			
 		}
 		myReader.close();
-		return HttpStatus.CREATED;
+		return ResponseEntity.status(HttpStatus.CREATED).body("CREATED");
 	}
 	
 	
