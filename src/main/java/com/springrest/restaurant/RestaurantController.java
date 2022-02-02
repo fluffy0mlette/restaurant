@@ -26,7 +26,9 @@ public class RestaurantController {
 	@EventListener(ApplicationReadyEvent.class)
 	public HttpStatus StartUp() {
 		
-		File myObj = new File("/Users/fluffy/Downloads/delivery/initialData.txt");
+		//File myObj = new File("/Users/fluffy/Downloads/delivery/initialData.txt");
+		String basePath = new File("").getAbsolutePath();
+		File myObj = new File(basePath + "/initialData.txt");
 		Scanner myReader = null;
 		try {
 			myReader = new Scanner(myObj);
@@ -93,7 +95,9 @@ public class RestaurantController {
 	
 	@PostMapping("/reInitialize")
 	public ResponseEntity<String> reInitialize() {
-		File myObj = new File("/Users/fluffy/Downloads/delivery/initialData.txt");
+		//File myObj = new File("/Users/fluffy/Downloads/delivery/initialData.txt");
+		String basePath = new File("").getAbsolutePath();
+		File myObj = new File(basePath + "/initialData.txt");
 		Scanner myReader = null;
 		try {
 			myReader = new Scanner(myObj);
